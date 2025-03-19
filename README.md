@@ -4,6 +4,9 @@
 
 Deploy a hassle-free Caddy server with built-in support for Cloudflare DNS-01 ACME challenges. Streamline your SSL certificate management and ensure your server stays secure without manual updates, making it an effortless and reliable solution.
 
+## Fork
+
+Forked from [CaddyBuilds/caddy-cloudflare](https://github.com/CaddyBuilds/caddy-cloudflare).
 
 ## Table of Contents
 
@@ -26,7 +29,7 @@ Deploy a hassle-free Caddy server with built-in support for Cloudflare DNS-01 AC
 - **Automated Builds**: Automatically checks for new Caddy releases and builds Docker images.
 - **Continuous Integration**: Utilizes GitHub Actions for seamless CI/CD.
 - **Cloudflare DNS Integration**: Integrates Cloudflare DNS for automatic SSL certificate management.
-- **Multi-Platform Support**: Builds images for multiple architectures, including `amd64`, `arm64`, `arm/v7` (Raspberry Pi), `ppc64le`, and `s390x` , ensuring compatibility across a wide range of devices and systems.
+- **Multi-Platform Support**: Builds images for multiple architectures, including `amd64`, `arm64`, `arm/v7` (Raspberry Pi), ensuring compatibility across a wide range of devices and systems.
 - **Alpine-based Image**: Provides a lightweight Alpine-based image for smaller size and faster deployment.
 - **Manual Trigger**: Allows manual triggering of the build process.
 - **Open Source**: Contributions are welcome under the MIT License.
@@ -38,11 +41,11 @@ Deploy a hassle-free Caddy server with built-in support for Cloudflare DNS-01 AC
 To use the pre-built Docker image, pull it from the GitHub Container Registry:
 
 ```sh
-docker pull ghcr.io/caddybuilds/caddy-cloudflare:latest
-docker pull caddybuilds/caddy-cloudflare:latest
+docker pull ghcr.io/adilinden-oss/caddy-cloudflare:latest
+docker pull adilinden-oss/caddy-cloudflare:latest
 # alpine
-docker pull ghcr.io/caddybuilds/caddy-cloudflare:alpine
-docker pull caddybuilds/caddy-cloudflare:alpine
+docker pull ghcr.io/adilinden-oss/caddy-cloudflare:alpine
+docker pull adilinden-oss/caddy-cloudflare:alpine
 ```
 You can use the image in your Docker setup. Here is an example `docker-compose.yml` file:
 ```yaml
@@ -50,7 +53,7 @@ version: "3.7"
 
 services:
   caddy:
-    image: ghcr.io/caddybuilds/caddy-cloudflare:latest
+    image: ghcr.io/adilinden-oss/caddy-cloudflare:latest
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
@@ -200,7 +203,7 @@ version: "3.7"
 
 services:
   caddy:
-    image: ghcr.io/caddybuilds/caddy-cloudflare:latest
+    image: ghcr.io/adilinden-oss/caddy-cloudflare:latest
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
@@ -242,7 +245,7 @@ This setup is the same as specifying the provider in the [tls directive's ACME i
 
 ## Tags
 
-The [caddy-cloudflare](https://github.com/caddybuilds/caddy-cloudflare/pkgs/container/caddy-cloudflare) image on GitHub Container Registry and Docker Hub provides the following tags:
+The [caddy-cloudflare](https://github.com/adilinden-oss/caddy-cloudflare/pkgs/container/caddy-cloudflare) image on GitHub Container Registry and Docker Hub provides the following tags:
 
 - **`latest`**: 
   - Always points to the most recent stable release of Caddy with the Cloudflare DNS module.
@@ -253,7 +256,7 @@ The [caddy-cloudflare](https://github.com/caddybuilds/caddy-cloudflare/pkgs/cont
   - Examples include:
     - **`2.7.6`**: Full version tag for Caddy version 2.7.6, ensuring you are using this exact release. 
     
-         (eg: ```docker pull ghcr.io/caddybuilds/caddy-cloudflare:2.8.0``` )
+         (eg: ```docker pull ghcr.io/adilinden-oss/caddy-cloudflare:2.8.0``` )
     - **`2.7`**: Minor version tag for the latest patch release within the 2.7 series, allowing for minor updates without breaking changes.
     - **`2`**: Major version tag for the latest release within the 2.x series, providing updates within the major version while maintaining compatibility.
 
@@ -262,13 +265,11 @@ The [caddy-cloudflare](https://github.com/caddybuilds/caddy-cloudflare/pkgs/cont
 
 ## Platform Support
 
-The `caddybuilds/caddy-cloudflare` image is built to support multiple platforms, ensuring compatibility across a wide range of devices and systems. The supported platforms include:
+The `adilinden-oss/caddy-cloudflare` image is built to support multiple platforms, ensuring compatibility across a wide range of devices and systems. The supported platforms include:
 
 - **linux/amd64**: Standard x86_64 architecture, commonly used in desktop and server environments.
 - **linux/arm64**: ARM 64-bit architecture, used in many modern servers and high-end ARM devices.
 - **linux/arm/v7**: ARM 32-bit architecture, widely used in devices like Raspberry Pi.
-- **linux/ppc64le**: 64-bit PowerPC Little Endian architecture.
-- **linux/s390x**: 64-bit IBM System z architecture.
 
 ### Alpine Support
 
@@ -283,8 +284,8 @@ The Alpine-based image provides a lightweight alternative, based on the popular 
 To use the Alpine-based image, pull it from the GitHub Container Registry or Docker Hub:
 
 ```sh
-docker pull ghcr.io/caddybuilds/caddy-cloudflare:alpine
-docker pull caddybuilds/caddy-cloudflare:alpine
+docker pull ghcr.io/adilinden-oss/caddy-cloudflare:alpine
+docker pull adilinden-oss/caddy-cloudflare:alpine
 ```
 
 ### Raspberry Pi Support
@@ -294,7 +295,7 @@ This Docker image is optimized for Raspberry Pi, allowing you to deploy Caddy wi
 To use the image on a Raspberry Pi, ensure you are running a compatible operating system (such as Raspberry Pi OS) and have Docker installed. You can then pull the image and run it as you would on any other system:
 
 ```sh
-docker pull ghcr.io/caddybuilds/caddy-cloudflare:latest
+docker pull ghcr.io/adilinden-oss/caddy-cloudflare:latest
 ```
 # Building Your Own Docker Image
 If you prefer to build your own Docker image, follow these steps:
@@ -310,7 +311,7 @@ If you prefer to build your own Docker image, follow these steps:
 
 ## Setup Instructions
 
-1. **[Fork this repository](https://github.com/caddybuilds/caddy-cloudflare/fork)** to your GitHub account.
+1. **[Fork this repository](https://github.com/adilinden-oss/caddy-cloudflare/fork)** to your GitHub account.
 
 2. **Clone the forked repository** to your local machine:
    ```sh
